@@ -9,10 +9,11 @@
                 <h1>#NOM</h1>
                 #BIO
                 #EMAIL
+                [(#LOGO_AUTEUR|right)]
 
                 <h2>Liste des articles publiés de cet auteur </h2>
                 <table class="table table-stripped">
-                <BOUCLE_AUTEUR_PUBLI(ARTICLES) {statut=publie} {id_auteur}>
+                <BOUCLE_AUTEUR_PUBLI(ARTICLES) {statut=publie} {id_auteur} {par date} {inverse}>
                     <tr><td>#DATE</td><td>#TITRE</td></tr>
                 </BOUCLE_AUTEUR_PUBLI>
                 </table>

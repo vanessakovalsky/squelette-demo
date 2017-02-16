@@ -1,0 +1,17 @@
+<HTML>
+    <head>
+        <INCLURE{fond=inclure/head}>
+    </head>
+    <body>
+        <INCLURE{fond=inclure/header}>
+        <div class="container main-content">
+            <BOUCLE_auteur(AUTEURS) {id_auteur}>
+                #NOM
+                #BIO
+                #EMAIL
+                 #FORMULAIRE_ECRIRE_AUTEUR
+            </BOUCLE_auteur>
+        </div>
+        <INCLURE{fond=inclure/footer}>
+    </body>
+</HTML>

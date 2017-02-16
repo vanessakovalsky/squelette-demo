@@ -4,12 +4,10 @@
     </head>
     <body>
         <INCLURE{fond=inclure/header}>
-        
+        <div class="container main-content">
         <BOUCLE_rubrique(RUBRIQUES) {id_rubrique}>
-            <h2>Descriptif de la rubrique</h2>
-            [(#LOGO_RUBRIQUE|centrer||image_reduire{100,50})]
-            <a href="[(#LOGO_RUBRIQUE||extraire_attribut{src}|abs_url)]">Chemin complet du logo</a>
-            <h3>#TITRE</h3>
+            <a href="[(#LOGO_RUBRIQUE||extraire_attribut{src}|abs_url)]">[(#LOGO_RUBRIQUE|left||image_reduire{100,50})]</a>
+            <h1>#TITRE</h1>
             #TEXTE
             <br />
             <h2> Les 3 derniers articles du blog</h2>
@@ -32,5 +30,7 @@
                 <p>[(#TEXTE|couper{100})]</p>
             </BOUCLE_ARTICLE_PLUS_LUS>
         </BOUCLE_rubrique>
+        </div>
+        <INCLURE{fond=inclure/footer}>
     </body>
 </HTML>

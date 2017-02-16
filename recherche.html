@@ -1,0 +1,31 @@
+<HTML>
+    <head>
+        <INCLURE{fond=inclure/head}>
+    </head>
+    <body>
+        <INCLURE{fond=inclure/header}>
+        <div class="container main-content">
+        <h1>Resultats pour la recheche : [(#RECHERCHE)]</h1>
+        <h2>Liste des articles trouvés</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Points de classement</th>
+                    <th>Nom et accès à l'article</th>
+                    <th>Auteurs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <BOUCLE_articles(ARTICLES) {recherche} {!par points}>
+                <tr>
+                    <td>#POINTS</td>
+                    <td><a href="#URL_ARTICLE">#TITRE</a></td>
+                    <td>#LESAUTEURS</td>                
+                </tr>
+                </BOUCLE_articles>
+            </tbody>
+        </table>
+        </div>
+        <INCLURE{fond=inclure/footer}>
+    </body>
+</HTML>

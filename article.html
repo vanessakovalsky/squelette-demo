@@ -4,17 +4,18 @@
     </head>
     <body>
         <INCLURE{fond=inclure/header}>
-        <section>
-    <BOUCLE_article_un(ARTICLES) {id_article=#ID_ARTICLE}>
+        <div class="container main-content">
+            <BOUCLE_article_un(ARTICLES) {id_article=#ID_ARTICLE}>
             <nav>
-            <h2>Sous-rubrique</h2>
             <BOUCLE_sous_rubrique(RUBRIQUES) {id_parent=#ID_RUBRIQUE}>
                 <a href="#URL_RUBRIQUE">#TITRE</a>
             </BOUCLE_sous_rubrique>
             </nav>
-        <h1>#TITRE</h1>
-        <p class="contenu-article">
-            #TEXTE
-        </p>
-    </BOUCLE_article_un>
+            <h1>#TITRE</h1>
+            <p class="contenu-article">
+                #TEXTE
+            </p>
+            </BOUCLE_article_un>
+        </div>
+        <INCLURE{fond=inclure/footer}>
 </body>

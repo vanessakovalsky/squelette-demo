@@ -1,1 +1,39 @@
-Mot clé : #TITRE
+<HTML>
+    <head>
+        <INCLURE{fond=inclure/head}>
+    </head>
+    <body>
+        <INCLURE{fond=inclure/header}>
+        <div class="container main-content">
+            <BOUCLE_mot(MOTS) {id_mot}>
+			<div class="cartouche">
+				<h1 class="surlignable">#TITRE</h1>
+			</div>
+	
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+	
+			<div class="menu menu_articles">
+				<h2>Articles</h2>
+				<ul>
+					<BOUCLE_articles(ARTICLES) {id_mot} {!par popularite} {pagination 10}>
+					<li dir="#LANG_DIR" class="hentry clearfix text-#LANG_LEFT">
+						<strong><a href="#URL_ARTICLE">[(#LOGO_ARTICLE_RUBRIQUE|image_reduire{50,*}) ]#TITRE</a></strong>
+						<br /><small>[(#DATE|affdate_jourcourt)][, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</small>
+						[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION)</div>]
+					</li>
+					</BOUCLE_articles>
+				</ul>
+			</div>
+	
+			<div class="menu menu_rubriques">
+				<h2>Rubriques</h2>
+				<ul>
+					<BOUCLE_rubriques(RUBRIQUES) {id_mot} {par titre}>
+					<li><a href="#URL_RUBRIQUE">#TITRE</a></li>
+					</BOUCLE_rubriques>
+				</ul>
+			</div>
+            </BOUCLE_mot>
+        </div>
+        <INCLURE{fond=inclure/footer}>
+</body>

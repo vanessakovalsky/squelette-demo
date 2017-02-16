@@ -4,7 +4,7 @@
     </head>
     <body>
         <INCLURE{fond=inclure/header}>
-        <div class="container">
+        <div class="container main-content">
             <h1>Bienvenue sur mon site de démo</h1>
             <article>
                <BOUCLE_mot_cle_homepage(ARTICLES) {titre_mot=Homepage}>
@@ -19,9 +19,6 @@
                 </BOUCLE_mot_rubrique_homepage>
             </article>
         </div>
-        <footer>
-            #DESCRIPTIF_SITE_SPIP
-            #INCLURE{fond=inclure/menu, env, identifiant=footer-menu}
-        </footer>
+        <INCLURE{fond=inclure/footer}>
     </body>
 </HTML>

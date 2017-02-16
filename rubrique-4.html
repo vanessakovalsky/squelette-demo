@@ -1,0 +1,34 @@
+<HTML>
+    <head>
+        <INCLURE{fond=inclure/head}>
+    </head>
+    <body>
+        <INCLURE{fond=inclure/header}>
+        <INCLURE{fond=inclure/menu}>
+        
+        <BOUCLE_rubrique(RUBRIQUES) {id_rubrique}>
+            <h2>Descriptif de la rubrique</h2>
+            [(#LOGO_RUBRIQUE|centrer||image_reduire{100,50})]
+            <a href="[(#LOGO_RUBRIQUE||extraire_attribut{src}|abs_url)]">Chemin complet du logo</a>
+            <h3>#TITRE</h3>
+            #TEXTE
+            <br />
+            <h2> Les 3 derniers articles du blog</h2>
+            <BOUCLE_ARTICLE_RUBRIQUE(ARTICLES) {id_rubrique} {0,3} {par date} {inverse}>
+                <a href="#URL_ARTICLE">#TITRE</a>
+                <br />
+                #LESAUTEURS
+                [(#DATE|nom_jour)] [(#DATE|affdate{d/m/Y})]
+                [<p>(#TEXTE|couper{100})</p>]
+            </BOUCLE_ARTICLE_RUBRIQUE>
+            <h2> Les 3 articles les plus lus</h2>
+            <BOUCLE_ARTICLE_PLUS_LUS(ARTICLES) {id_rubrique} {0,3} {par visites}>
+                <a href="#URL_ARTICLE">#TITRE</a>
+                <br />
+                #LESAUTEURS
+                [(#DATE|nom_jour)] [(#DATE|affdate{d/m/Y})]
+                <p>[(#TEXTE|couper{100})]</p>
+            </BOUCLE_ARTICLE_PLUS_LUS>
+        </BOUCLE_rubrique>
+    </body>
+</HTML>

@@ -21,6 +21,7 @@
 						<br /><small>[(#DATE|affdate_jourcourt)][, <:par_auteur:> (#LESAUTEURS|supprimer_tags)]</small>
 						[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION)</div>]
 					</li>
+                     [ (#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|oui)Nombre d'article : #TOTAL_BOUCLE]
 					</BOUCLE_articles>
 				</ul>
 			</div>

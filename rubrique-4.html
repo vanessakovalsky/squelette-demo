@@ -4,7 +4,6 @@
     </head>
     <body>
         <INCLURE{fond=inclure/header}>
-        <INCLURE{fond=inclure/menu}>
         
         <BOUCLE_rubrique(RUBRIQUES) {id_rubrique}>
             <h2>Descriptif de la rubrique</h2>
@@ -16,6 +15,9 @@
             <h2> Les 3 derniers articles du blog</h2>
             <BOUCLE_ARTICLE_RUBRIQUE(ARTICLES) {id_rubrique} {0,3} {par date} {inverse}>
                 <a href="#URL_ARTICLE">#TITRE</a>
+                <BOUCLE_MOT(MOTS) {id_article}>            
+                    <a href="#URL_MOT">#TITRE</a>
+                </BOUCLE_MOT>
                 <br />
                 #LESAUTEURS
                 [(#DATE|nom_jour)] [(#DATE|affdate{d/m/Y})]
